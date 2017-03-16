@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RuanMou.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,15 @@ namespace RuanMou.MvcTemp.Controllers
 {
     public class HomeController : Controller
     {
+        private IUserRepository userRepository;
+        /// <summary>
+        /// autofac自动注入,及自动释放
+        /// </summary>
+        /// <param name="_userRepository"></param>
+        public HomeController(IUserRepository _userRepository)
+        {
+            this.userRepository = _userRepository;
+        }
         public ActionResult Index()
         {
             return View();
