@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DbModel
 {
-    public class Class1
+    public abstract class AbsModel
     {
+        public int Id { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }
